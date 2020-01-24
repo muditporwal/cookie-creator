@@ -1,17 +1,9 @@
-name: CI
-
-on: [push]
-
+name: Gradle Validation CI
+on: [push, pull_request]
 jobs:
-  build:
+  validation:
+    name: "Validation"
     runs-on: ubuntu-latest
     steps:
-    - name: Google Java Format
-      uses: axel-op/googlejavaformat-action@v2.0.0
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+      - uses: actions/checkout@v2
+      - uses: gradle/wrapper-validation-action@v1
