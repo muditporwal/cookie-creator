@@ -1,16 +1,16 @@
 name: Gradle Validation CI
 on: [push, pull_request]
 jobs:
-  format:
-    name: Google Java Format
-    runs-on: ubuntu-latest
-    steps:
-      - name: Code-format
-        uses: axel-op/googlejavaformat-action@v2.0.0
-        with:
-          args: --replace
-          files: "**/*.java"
-          skipCommit: false
+#  format:
+#    name: Google Java Format
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Code-format
+#        uses: axel-op/googlejavaformat-action@v2.0.0
+#        with:
+#          args: --replace
+#          files: "**/*.java"
+#          skipCommit: false
   validation:
     name: "Validation"
     runs-on: ubuntu-latest
