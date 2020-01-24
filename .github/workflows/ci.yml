@@ -1,6 +1,11 @@
 name: Gradle Validation CI
 on: [push, pull_request]
 jobs:
+  format:
+    name: Google Java Format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: axel-op/googlejavaformat-action@v2.0.0
   validation:
     name: "Validation"
     runs-on: ubuntu-latest
